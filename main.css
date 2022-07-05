@@ -46,3 +46,9 @@
   transition: all 1s;
   /* transform: translateX(-100vw); */
 }
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: aqua;
+}
