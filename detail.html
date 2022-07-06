@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+  </head>
+  <body>
+    <style>
+      ul.list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        border-bottom: 1px solid #ccc;
+      }
+      ul.list::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+      .tab-button {
+        display: block;
+        padding: 10px 20px 10px 20px;
+        float: left;
+        margin-right: -1px;
+        margin-bottom: -1px;
+        color: grey;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .tttt {
+        border-top: 2px solid orange;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid white;
+        border-left: 1px solid #ccc;
+        color: black;
+        margin-top: -2px;
+      }
+      .tab-content {
+        display: none;
+        padding: 10px;
+      }
+      .show {
+        display: block;
+      }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <div class="container mt-3">
+      <div class="card p-3">
+        <span id="product"> 상품명 </span>
+        <span id="price"> 가격 </span>
+      </div>
+    </div>
+    <script>
+      var car = ['소나타', 50000, 'white'];
+      var car2 = { name: '소나타', price: [50000, 3000, 4000], color: 'white' };
+      // car[0] = 'abnTe';
+      // car2.price = 30000;
+      // console.log(car[0]);
+      // console.log(car2['name']);
+      // console.log(car2['price']);
+      // car.sort();
+      // // car.slice(1, 3);
+      // console.log(car.slice(1, 3));
+
+      // car2.sort();
+      // console.log(car);
+
+      // console.log(car2);
+    </script>
+    <script>
+      document.getElementById('product').innerHTML = car2.name;
+      document.getElementById('price').innerHTML = car2.price[0];
+    </script>
+    <div class="container">
+      <ul class="list">
+        <li class="tab-button tttt">Products</li>
+        <li class="tab-button">Information</li>
+        <li class="tab-button">Shipping</li>
+      </ul>
+      <div class="tab-content show">
+        <p>상품설명입니다. Product</p>
+      </div>
+      <div class="tab-content">
+        <p>스펙설명입니다. Information</p>
+      </div>
+      <div class="tab-content">
+        <p>배송정보입니다. Shipping</p>
+      </div>
+    </div>
+    <script src="jquery/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script src="tab.js"></script>
+  </body>
+</html>

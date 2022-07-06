@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+  </head>
+  <body>
+    <div class="card-group container">
+      <div class="card">
+        <img src="https://via.placeholder.com/600" />
+        <div class="card-body">
+          <h5 class="t0">Card title</h5>
+          <p class="p0">가격 : 70000</p>
+          <button class="btn btn-danger">주문하기</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/600" />
+        <div class="card-body">
+          <h5 class="t1">Card title</h5>
+          <p class="p1">가격 : 70000</p>
+          <button class="btn btn-danger">주문하기</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/600" />
+        <div class="card-body">
+          <h5 class="t2">Card title</h5>
+          <p class="p2">가격 : 70000</p>
+          <button class="btn btn-danger">주문하기</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var products = [
+        { id: 0, price: 70000, title: 'Blossom Dress' },
+        { id: 1, price: 50000, title: 'Springfield Shirt' },
+        { id: 2, price: 60000, title: 'Black Monastery' },
+      ];
+      console.log(products[1]);
+    </script>
+    <script>
+      document.querySelector('.t0').innerHTML = products[0].title;
+      document.querySelector('.p0').innerHTML = '가격은' + products[0].price;
+      document.querySelector('.t1').innerHTML = products[1].title;
+      document.querySelector('.p1').innerHTML = products[1].price;
+      document.querySelector('.t2').innerHTML = products[2].title;
+      document.querySelector('.p2').innerHTML = products[2].price;
+    </script>
+    <script src="jquery/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+  </body>
+</html>
