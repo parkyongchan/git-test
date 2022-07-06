@@ -57,6 +57,7 @@
       <select class="form-select mt-2">
         <option>모자</option>
         <option>셔츠</option>
+        <option>바지</option>
       </select>
       <select class="form-select mt-2 form-hide">
         <option>95</option>
@@ -65,19 +66,52 @@
     </form>
     <div id="test"></div>
     <script>
-      var a = document.createElement('p');
-      a.innerHTML = '안녕';
-      document.querySelector('#test').appendChild(a);
+      // var a = document.createElement('p');
+      // a.innerHTML = '안녕';
+      // document.querySelector('#test').appendChild(a);
+      // var 템플릿 = '<p>안녕</p>';
+      // document.querySelector('#test').innerAdjacentHTML('beforeend', 템플릿);
+      var pants = [28, 30, 32];
+      var a = '<p>안녕</p>';
+      document.querySelector('#test').insertAdjacentHTML('beforeend', a);
+      var a = '<p>안녕</p>';
+      $('#test').append(a);
     </script>
     <script>
+      var pants = [28, 30, 32];
+      var shirts = [100, 200, 300];
+      var hat = [1, 2, 3];
       $('.form-select')
         .eq(0)
         .on('input', function () {
           var value = $('.form-select').eq(0).val();
+          // if (value == '셔츠') {
+          //   $('.form-select').eq(1).removeClass('form-hide');
+          // } else if (value == '바지') {
+          //   $('.form-select').eq(1).removeClass('form-hide');
+          //   $('.form-select').eq(1).html('');
+          //   pants.forEach(function (a) {
+          //     $('.form-select').eq(1).append(`<option>${a}</option>`);
+          //   });
+          // }
           if (value == '셔츠') {
             $('.form-select').eq(1).removeClass('form-hide');
-          } else {
-            $('.form-select').eq(1).addClass('form-hide');
+            $('.form-select').eq(1).html('');
+            shirts.forEach(function (a) {
+              $('.form-select').eq(1).append(`<option>${a}</option>`);
+            });
+          } else if (value == '바지') {
+            $('.form-select').eq(1).removeClass('form-hide');
+            $('.form-select').eq(1).html('');
+            pants.forEach(function (a) {
+              $('.form-select').eq(1).append(`<option>${a}</option>`);
+            });
+          } else if (value == '모자') {
+            $('.form-select').eq(1).removeClass('form-hide');
+            $('.form-select').eq(1).html('');
+            hat.forEach(function (a) {
+              $('.form-select').eq(1).append(`<option>${a}</option>`);
+            });
           }
         });
     </script>
