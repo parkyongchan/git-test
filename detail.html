@@ -3,6 +3,8 @@
   <head>
     <title>Document</title>
     <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="jquery/jquery-3.6.0.js"></script>
   </head>
   <body>
     <style>
@@ -27,7 +29,7 @@
         text-decoration: none;
         cursor: pointer;
       }
-      .tttt {
+      .orange {
         border-top: 2px solid orange;
         border-right: 1px solid #ccc;
         border-bottom: 1px solid white;
@@ -43,16 +45,45 @@
         display: block;
       }
     </style>
-    <link rel="stylesheet" href="css/bootstrap.css" />
+    <!-- <link rel="stylesheet" href="css/bootstrap.css" /> -->
     <div class="container mt-3">
       <div class="card p-3">
         <span id="product"> 상품명 </span>
         <span id="price"> 가격 </span>
       </div>
     </div>
+    <form class="container my-5 form-group">
+      <p>상품선택</p>
+      <select class="form-select mt-2">
+        <option>모자</option>
+        <option>셔츠</option>
+      </select>
+      <select class="form-select mt-2 form-hide">
+        <option>95</option>
+        <option>100</option>
+      </select>
+    </form>
+    <div id="test"></div>
     <script>
-      var car = ['소나타', 50000, 'white'];
-      var car2 = { name: '소나타', price: [50000, 3000, 4000], color: 'white' };
+      var a = document.createElement('p');
+      a.innerHTML = '안녕';
+      document.querySelector('#test').appendChild(a);
+    </script>
+    <script>
+      $('.form-select')
+        .eq(0)
+        .on('input', function () {
+          var value = $('.form-select').eq(0).val();
+          if (value == '셔츠') {
+            $('.form-select').eq(1).removeClass('form-hide');
+          } else {
+            $('.form-select').eq(1).addClass('form-hide');
+          }
+        });
+    </script>
+    <script>
+      // var car = ['소나타', 50000, 'white'];
+      // var car2 = { name: '소나타', price: [50000, 3000, 4000], color: 'white' };
       // car[0] = 'abnTe';
       // car2.price = 30000;
       // console.log(car[0]);
@@ -68,12 +99,12 @@
       // console.log(car2);
     </script>
     <script>
-      document.getElementById('product').innerHTML = car2.name;
-      document.getElementById('price').innerHTML = car2.price[0];
+      // document.getElementById('product').innerHTML = car2.name;
+      // document.getElementById('price').innerHTML = car2.price[0];
     </script>
     <div class="container">
       <ul class="list">
-        <li class="tab-button tttt">Products</li>
+        <li class="tab-button orange">Products</li>
         <li class="tab-button">Information</li>
         <li class="tab-button">Shipping</li>
       </ul>
