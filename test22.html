@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+  </head>
+  <body>
+    <p>태조이성계가 태어난 년도는?</p>
+    <input type="text" id="answer" />
+    <button id="send-answer">제출</button>
+    <script src="jquery/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script>
+      var count = 0;
+      $('#send-answer').on('click', function () {
+        count += 1;
+        var 유저답안 = document.querySelector('#answer').value;
+        if (유저답안 == '1335') {
+          alert('성공');
+        } else if (count >= 3 && 유저답안 != '1335') {
+          alert('멍청아');
+        }
+      });
+    </script>
+    <script>
+      var name = 'park';
+      var id = 0;
+      function showName() {
+        var name = 'kim';
+        var id = 1;
+        console.log(name);
+      }
+      showName();
+      console.log(id);
+    </script>
+    <script>
+      //   function showName1() {
+      var 예금액 = 10000;
+      var 미래예금액 = 0;
+
+      if (예금액 >= 50000) {
+        미래예금액 = 예금액 * 1.2 * 1.2;
+      } else {
+        미래예금액 = 예금액 * 1.15 * 1.15;
+      }
+
+      console.log(미래예금액);
+
+      //   showName1();
+    </script>
+    <script>
+      var first = 360;
+      var second = first * (2 / 3);
+      var third = second * (2 / 3);
+      var a = first + second + third;
+      console.log(a);
+    </script>
+  </body>
+</html>
